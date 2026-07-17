@@ -4,8 +4,8 @@ const api = axios.create({
   	baseURL: "http://192.168.133.107:8000"
 });
 
-export const PostRegister = (name, email, password) => {
-    const response = api.post("/register", { 
+export async function postRegister(name, email, password) {
+    const response = await api.post("/register", { 
 		name, 
 		email, 
 		password 

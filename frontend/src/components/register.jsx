@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import '../App.css';
 import { useNavigate } from "react-router-dom";
-import { PostRegister } from "../api/registerRequest.js";
+import { postRegister } from "../api/registerRequest.js";
 
 const Register = () => {
 
@@ -26,8 +26,7 @@ const Register = () => {
             return;
         }
         else {
-            console.log("Register data:", registerData);
-            PostRegister(registerData.name, registerData.email, registerData.password)
+            postRegister(registerData.name, registerData.email, registerData.password)
                 .then(data => {
                     console.log('Registration successful:', data);
                 })
