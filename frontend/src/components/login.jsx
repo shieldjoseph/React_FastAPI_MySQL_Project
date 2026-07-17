@@ -24,6 +24,7 @@ const Login = () => {
         postLogin(loginData.name, loginData.email, loginData.password)
             .then(data => {
                 console.log('Login successful:', data);
+                navigate("/FirstPage");
             })
             .catch(error => {
                 console.error('Login failed:', error);
